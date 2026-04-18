@@ -18,4 +18,6 @@ server.listen(PORT, async () => {
   if (process.env.NODE_ENV !== 'production') {
     await open(`http://localhost:${PORT}`);
   }
+}).on('error', (err) => {
+  console.error('Server error:', err);
 });
